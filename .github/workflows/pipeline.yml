@@ -26,6 +26,11 @@ jobs:
         run: npm run lint
       - name: test
         run: npm run test
+      - name: start test server
+        run: |
+          npm run start:test
+          sleep 5
+          curl http://localhost:3000
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
       - name: Run Playwright tests

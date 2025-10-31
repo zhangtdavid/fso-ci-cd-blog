@@ -22,15 +22,19 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm install
+      - name: start test server
+        run: |
+          echo "Pre test"
+          npm run start:test
+          echo "Pre sleep"
+          sleep 5
+          echo "Post sleep"
+          curl http://localhost:3001 -I
+          echo "Post curl"
       - name: Check style
         run: npm run lint
       - name: test
         run: npm run test
-      - name: start test server
-        run: |
-          npm run start:test
-          sleep 5
-          curl http://localhost:3001 -I
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
       - name: Run Playwright tests

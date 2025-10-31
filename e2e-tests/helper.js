@@ -12,4 +12,7 @@ const createBlog = async (page, title, author, url) => {
   await page.getByRole('button', { name: 'create' }).click()
 }
 
-export { loginWith, createBlog }
+module.exports = {
+  loginWith,
+  createBlog
+}

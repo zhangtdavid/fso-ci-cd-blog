@@ -30,7 +30,7 @@ jobs:
         run: |
           npm run start:test
           sleep 5
-          curl http://localhost:3000
+          curl http://localhost:3001 -I
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
       - name: Run Playwright tests

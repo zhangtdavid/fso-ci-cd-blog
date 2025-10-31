@@ -25,7 +25,7 @@ jobs:
       - name: start test server
         run: |
           echo "Pre test"
-          npm run start:test
+          npm run start:test &
           echo "Pre sleep"
           sleep 5
           echo "Post sleep"

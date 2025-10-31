@@ -18,10 +18,11 @@ primary_region = 'sjc'
   size = 'shared-cpu-1x'
 
 [env]
-  PORT = "3001" # add this
+  PORT = "3001"
+  NODE_ENV = "production"
 
 [processes]
-  app = "node app.js"
+  app = "node index.js"
 
 [[http_service.checks]]
   grace_period = "10s"

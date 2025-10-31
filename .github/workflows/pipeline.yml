@@ -27,7 +27,7 @@ jobs:
       - name: test
         run: npm run test
       - name: Build frontend
-        run: npm run build:ui
+        run: pushd frontend && npm i && popd && npm run build:ui
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
       - name: Run Playwright tests

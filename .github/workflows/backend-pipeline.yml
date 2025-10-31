@@ -11,6 +11,10 @@ on:
 jobs:
   lint-and-test-backend:
     runs-on: ubuntu-latest
+    env:
+      TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+      SECRET: ${{ secrets.SECRET }}
+      PORT: 3001
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -87,7 +91,8 @@ jobs:
   on_failure:
     runs-on: ubuntu-latest
     needs: [lint-and-test-frontend, lint-and-test-backend, deploy-to-fly, tag_release]
-    if: failure()
+    # if: failure()
+    if: false
     steps:
       - uses: actions/checkout@v4
       - name: discord webhook

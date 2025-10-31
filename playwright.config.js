@@ -31,7 +31,7 @@ module.exports = defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
-    baseURL: 'http://localhost:3001',
+    baseURL: 'http://localhost:3001/',
   },
 
   /* Configure projects for major browsers */
@@ -73,10 +73,10 @@ module.exports = defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
+  webServer: {
+    command: 'npm run start:test',
+    url: 'http://localhost:3001',
+    timeout: 10 * 1000,
+    reuseExistingServer: !process.env.CI,
+  },
 })
-

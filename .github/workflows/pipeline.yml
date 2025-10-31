@@ -23,6 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: start test server
+        if: false
         run: |
           echo "Pre test"
           npm run start:test > server.log 2>&1 &

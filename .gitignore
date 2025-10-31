@@ -1,0 +1,13 @@
+# Node
+node_modules/
+.vite/
+
+# Custom
+dist/
+.env
+
+# MacOS
+.DS_Store
+
+# Playwright
+coverage/

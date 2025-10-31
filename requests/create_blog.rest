@@ -1,0 +1,9 @@
+post http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: token xxx
+{
+  "title": "Blog Title",
+  "author": "zhangtdavid",
+  "url": "www.example.com",
+  "user": "66689c86678e6ef91c627f35"
+}

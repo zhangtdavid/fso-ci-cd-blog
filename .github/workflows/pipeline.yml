@@ -93,8 +93,7 @@ jobs:
   on_failure:
     runs-on: ubuntu-latest
     needs: [lint-and-test-frontend, lint-and-test-backend, deploy-to-fly, tag_release]
-    # if: failure()
-    if: false
+    if: failure()
     steps:
       - uses: actions/checkout@v4
       - name: discord webhook

@@ -54,7 +54,7 @@ jobs:
     if: |
       github.event_name == 'push' &&
       !contains(join(toJson(github.event.commits.*.message)), '#skip')
-    needs: [lint-and-test]
+    needs: [lint-and-test-frontend, lint-and-test-backend]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -74,7 +74,7 @@ jobs:
     if: |
       github.event_name == 'push' &&
       !contains(join(toJson(github.event.commits.*.message)), '#skip')
-    needs: [lint-and-test]
+    needs: [lint-and-test-frontend, lint-and-test-backend]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -86,7 +86,7 @@ jobs:
 
   on_failure:
     runs-on: ubuntu-latest
-    needs: [lint-and-test, deploy-to-fly, tag_release]
+    needs: [lint-and-test-frontend, lint-and-test-backend, deploy-to-fly, tag_release]
     if: failure()
     steps:
       - uses: actions/checkout@v4

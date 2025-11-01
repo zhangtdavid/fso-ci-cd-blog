@@ -27,6 +27,8 @@ RUN npm ci
 # Copy application code
 COPY --link . .
 
+# Build frontend
+RUN npm run build:ui
 
 # Final stage for app image
 FROM base

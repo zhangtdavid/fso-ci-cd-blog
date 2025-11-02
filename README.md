@@ -1,1 +1,1 @@
-https://fso-bloglist-zhangtdavid.fly.dev/ 
+https://fso-bloglist-dz.fly.dev/

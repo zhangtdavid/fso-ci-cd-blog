@@ -27,6 +27,9 @@ RUN npm ci
 # Copy application code
 COPY --link . .
 
+# install frontend node modules
+RUN cd frontend && NODE_ENV="development" npm ci
+
 # Build frontend
 RUN npm run build:ui
 
